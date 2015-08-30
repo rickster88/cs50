@@ -2,15 +2,14 @@
 #include <stdio.h>
 
 int main(void) {
+  printf("Enter dollar amount: ");
   float f = GetFloat();
-  printf("before loop");
   f *= 100;
   int cents = (int) f;
 
   int coins = 0;
 
   while (cents >= 25) {
-    printf("25");
     coins++;
     cents -= 25;
   }
@@ -20,11 +19,11 @@ int main(void) {
   }
   while (cents >= 5) {
     coins++;
-    coins -= 5;
+    cents -= 5;
   }
   while (cents >= 1) {
     coins++;
-    coins -=1;
+    cents -=1;
   }
   
   printf("%d\n", coins);
